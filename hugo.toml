@@ -1,0 +1,28 @@
+baseURL = "https://keyanbazargan.com/"
+languageCode = "en-us"
+title = "Keyan Bazargan"
+theme = "PaperMod"
+
+[params]
+  homeInfoParams = {Title = "Keyan Bazargan", Content = "A home for my thoughts and ideas in long-form."}
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+
+[menu]
+  [[menu.main]]
+    name = "Writing"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+[author]
+  name = "Keyan Bazargan"
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
