@@ -30,6 +30,7 @@ Books that have shaped how I think.
 ## Operating Principles
 
 - Every task or project must have a clear owner and a clear deadline.
+- If you don't finish your task in one sitting, plan exactly when you'll work on it next.
 
 ---
 
