@@ -4,7 +4,7 @@ title = "Keyan Bazargan"
 theme = "PaperMod"
 
 [params]
-  homeInfoParams = {Title = "A home for my thoughts and ideas in long-form", Content = ""}
+  homeInfoParams = {Title = "A home for my thoughts and ideas.", Content = ""}
   ShowReadingTime = true
   ShowPostNavLinks = true
 
