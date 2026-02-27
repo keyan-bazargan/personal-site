@@ -38,6 +38,11 @@ Books that have shaped how I think.
 
 Small things worth remembering.
 
+**2/27/26**
+- Tangerines for tasting extra good today.
+- Ayres for genuinely wishing me a big growth year.
+- My local dry cleaner for doing a great job with my suit pants.
+
 **2/26/26**
 - 80 yr old man for the pleasant passing conversation.
 - For the ability to see neon orange.
