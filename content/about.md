@@ -38,6 +38,12 @@ Books that have shaped how I think.
 
 Small things worth remembering.
 
+**2/26/26**
+- 80 yr old man for the pleasant passing conversation.
+- For the ability to see neon orange.
+- For my enjoyable nap in the sun.
+
+
 **2/25/26**
 - Aaron for genuinely wishing me good luck with my business.
 - The lady at the Whole Foods checkout for her friendliness.
