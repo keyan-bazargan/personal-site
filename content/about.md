@@ -38,6 +38,11 @@ Books that have shaped how I think.
 
 Small things worth remembering.
 
+**2/28/26**
+- I made it another month. 
+- Daniel and I played a great game of chess.
+- The contrast between the hot beach and my cold shower after.
+
 **2/27/26**
 - Tangerines for tasting extra good today.
 - Ayres for genuinely wishing me a big growth year.
