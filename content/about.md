@@ -17,6 +17,13 @@ layout = "page"
 
 ---
 
+## Operating Principles
+
+- Every task or project must have a clear owner and a clear deadline.
+- If you don't finish your task in one sitting, plan exactly when you'll work on it next.
+
+---
+
 ## Books
 
 Books that have shaped how I think.
@@ -25,12 +32,12 @@ Books that have shaped how I think.
 - *Ender's Game* — Orson Scott Card
 - *Think & Grow Rich* — Napoleon Hill
 
----
+## Movies
 
-## Operating Principles
+Movies that I've thoroughly enjoyed.
 
-- Every task or project must have a clear owner and a clear deadline.
-- If you don't finish your task in one sitting, plan exactly when you'll work on it next.
+- *From Russia With Love* — 1963
+- *Life is Beautiful* — 1997
 
 ---
 
