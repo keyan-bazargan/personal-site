@@ -19,6 +19,13 @@ layout = "page"
 
 ## Operating Principles
 
+### Meta
+- Customer obsession.
+- Heartfelt passion for invention.
+- Commitment to operational excellence.
+- Willingness to think long term.
+
+### Tactical
 - Every task or project must have a clear owner and a clear deadline.
 - If you don't finish your task in one sitting, plan exactly when you'll work on it next.
 
@@ -44,6 +51,12 @@ Movies that I've thoroughly enjoyed.
 ## Gratitude
 
 Small things worth remembering.
+
+**3/5/26**
+- To the lads for dinner, special night and conversations. Flow state achieved.
+
+**3/1/26**
+- For Oliver for a great conversation.
 
 **2/28/26**
 - I made it another month. 
