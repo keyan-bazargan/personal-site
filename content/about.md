@@ -45,6 +45,7 @@ Movies that I've thoroughly enjoyed.
 
 - *From Russia With Love* — 1963
 - *Life is Beautiful* — 1997
+- *Project Hail Mary* — 2025
 
 ---
 
