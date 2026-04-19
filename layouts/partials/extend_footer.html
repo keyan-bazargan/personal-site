@@ -1,15 +1,11 @@
-{{/* Analog design refresh — grain overlay, crosshair cursor, link swell. */}}
+{{/* Analog design refresh — paper grain overlay and ink-dot cursor. */}}
 
 <div class="grain" aria-hidden="true"></div>
 
 <div class="cursor" aria-hidden="true">
-  <svg viewBox="0 0 36 36">
-    <circle cx="18" cy="18" r="11"/>
-    <circle class="dot" cx="18" cy="18" r="1.5"/>
-    <line x1="18" y1="0"  x2="18" y2="6"/>
-    <line x1="18" y1="30" x2="18" y2="36"/>
-    <line x1="0"  y1="18" x2="6"  y2="18"/>
-    <line x1="30" y1="18" x2="36" y2="18"/>
+  <svg viewBox="-12 -12 24 24">
+    <circle class="ring" cx="0" cy="0" r="9"/>
+    <circle class="dot" cx="0" cy="0" r="2.2"/>
   </svg>
 </div>
 
@@ -30,8 +26,8 @@
   }, { passive: true });
 
   function tick() {
-    x += (tx - x) * 0.35;
-    y += (ty - y) * 0.35;
+    x += (tx - x) * 0.5;
+    y += (ty - y) * 0.5;
     cursor.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
     requestAnimationFrame(tick);
   }

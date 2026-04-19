@@ -75,35 +75,21 @@ body,
 }
 
 /* =============================================================
-   FILM GRAIN OVERLAY — SVG noise, fixed, lightly animated.
+   PAPER GRAIN — static SVG noise, no animation.
    ============================================================= */
 .grain {
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 9998;
-    opacity: 0.16;
+    opacity: 0.11;
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-    animation: grainshift 1.2s steps(6) infinite;
 }
 
 html[data-theme="dark"] .grain {
     mix-blend-mode: screen;
-    opacity: 0.1;
-}
-
-@keyframes grainshift {
-    0%   { transform: translate(0, 0); }
-    20%  { transform: translate(-3%, 2%); }
-    40%  { transform: translate(2%, -4%); }
-    60%  { transform: translate(-2%, 3%); }
-    80%  { transform: translate(3%, 1%); }
-    100% { transform: translate(0, 0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .grain { animation: none; }
+    opacity: 0.07;
 }
 
 /* Paper mottling beneath the grain — faint warm tone variation. */
@@ -126,16 +112,16 @@ html[data-theme="dark"] body::before {
 }
 
 /* =============================================================
-   ANALOG CURSOR — crosshair reticle, swells on interactive els.
+   INK-DOT CURSOR — small filled dot, grows a ring on hover.
    ============================================================= */
 .cursor {
     position: fixed;
     top: 0; left: 0;
-    width: 36px; height: 36px;
+    width: 8px; height: 8px;
     pointer-events: none;
     z-index: 10000;
     transform: translate(-50%, -50%);
-    transition: width 180ms ease, height 180ms ease, opacity 220ms ease;
+    transition: width 160ms ease, height 160ms ease, opacity 220ms ease;
     color: var(--ink);
     opacity: 0;
     will-change: transform;
@@ -143,16 +129,21 @@ html[data-theme="dark"] body::before {
 
 .cursor.is-ready { opacity: 1; }
 
-.cursor svg { width: 100%; height: 100%; display: block; }
-
-.cursor circle,
-.cursor line { stroke: currentColor; fill: none; stroke-width: 1; }
+.cursor svg { width: 100%; height: 100%; display: block; overflow: visible; }
 
 .cursor .dot { fill: currentColor; stroke: none; }
 
-.cursor.is-hover { width: 64px; height: 64px; }
-.cursor.is-hover circle { stroke: var(--accent); stroke-width: 1.5; }
-.cursor.is-hover .dot { fill: var(--accent); }
+.cursor .ring {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1;
+    opacity: 0;
+    transition: opacity 160ms ease;
+    transform-origin: center;
+}
+
+.cursor.is-hover { width: 22px; height: 22px; color: var(--accent); }
+.cursor.is-hover .ring { opacity: 1; }
 
 @media (hover: none), (pointer: coarse) {
     html, body { cursor: auto; }
@@ -160,92 +151,61 @@ html[data-theme="dark"] body::before {
 }
 
 /* =============================================================
-   HAND-DRAWN MARGINALIA — underlines, bullets, dividers.
+   CONTENT — clean editorial typography.
    ============================================================= */
 
-/* Wobbly underline on content links (masked so the color follows theme). */
+/* Simple underlined links in rust. */
 .post-content a,
 .home-info a,
 .first-entry a,
 .page-header a {
     color: var(--accent);
-    text-decoration: none;
-    position: relative;
-    display: inline;
-    padding-bottom: 3px;
-    background-image: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(138, 42, 30, 0.5);
+    transition: text-decoration-color 160ms ease;
 }
 
-.post-content a::after,
-.home-info a::after,
-.first-entry a::after,
-.page-header a::after {
-    content: "";
-    position: absolute;
-    left: 0; right: 0; bottom: -1px;
-    height: 7px;
-    background-color: var(--accent);
-    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 8' preserveAspectRatio='none'><path d='M2 5 C 20 1, 40 7, 60 4 S 100 2, 118 5' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round'/></svg>");
-            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 8' preserveAspectRatio='none'><path d='M2 5 C 20 1, 40 7, 60 4 S 100 2, 118 5' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round'/></svg>");
-    -webkit-mask-size: 100% 100%;
-            mask-size: 100% 100%;
-    -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
-    transition: height 180ms ease, transform 180ms ease;
+html[data-theme="dark"] .post-content a,
+html[data-theme="dark"] .home-info a,
+html[data-theme="dark"] .first-entry a,
+html[data-theme="dark"] .page-header a {
+    text-decoration-color: rgba(217, 138, 90, 0.5);
 }
 
-.post-content a:hover::after,
-.home-info a:hover::after,
-.first-entry a:hover::after,
-.page-header a:hover::after {
-    height: 11px;
-    transform: translateY(1px);
+.post-content a:hover,
+.home-info a:hover,
+.first-entry a:hover,
+.page-header a:hover {
+    text-decoration-color: var(--accent);
 }
 
-/* Sketched bullets for content lists. */
-.post-content ul {
-    list-style: none;
-    padding-left: 1.8rem;
-}
+/* Default disc bullets, softened via marker color. */
+.post-content ul { padding-left: 1.4rem; }
+.post-content ul li::marker { color: var(--ink-soft); }
 
-.post-content ul li {
-    position: relative;
-}
-
-.post-content ul li::before {
-    content: "";
-    position: absolute;
-    left: -1.6rem;
-    top: 0.7em;
-    width: 1.1rem;
-    height: 0.55rem;
-    background-color: var(--ink);
-    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 10'><path d='M1 5 Q 4 1, 8 5 T 22 4' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round'/></svg>");
-            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 10'><path d='M1 5 Q 4 1, 8 5 T 22 4' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round'/></svg>");
-    -webkit-mask-size: contain;
-            mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
-}
-
-/* Sketched dividers: Markdown `---` becomes hand-drawn line with a centered dot. */
+/* Dinkus divider — a centered asterism where `---` used to go. */
 .post-content hr,
 hr {
     border: none;
-    height: 16px;
-    margin: 2.6rem auto;
-    width: 200px;
-    background-color: var(--ink);
-    opacity: 0.65;
-    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 16'><path d='M4 8 Q 34 2, 68 9 T 134 7 T 196 8' fill='none' stroke='black' stroke-width='1.2' stroke-linecap='round'/><circle cx='100' cy='8' r='1.8' fill='black'/></svg>");
-            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 16'><path d='M4 8 Q 34 2, 68 9 T 134 7 T 196 8' fill='none' stroke='black' stroke-width='1.2' stroke-linecap='round'/><circle cx='100' cy='8' r='1.8' fill='black'/></svg>");
-    -webkit-mask-size: 100% 100%;
-            mask-size: 100% 100%;
-    -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
+    background: none;
+    height: auto;
+    margin: 2.8rem 0;
+    text-align: center;
+    overflow: visible;
 }
 
-/* Nav links stay quiet — no wobble. */
+.post-content hr::before,
+hr::before {
+    content: "⁂";
+    color: var(--ink-soft);
+    font-size: 1.4rem;
+    line-height: 1;
+    letter-spacing: 0.2em;
+}
+
+/* Nav links stay quiet. */
 .menu a,
 .logo a,
 .footer a {
@@ -254,6 +214,11 @@ hr {
 }
 .menu a:hover,
 .logo a:hover { color: var(--accent); }
+.footer a {
+    text-decoration: underline;
+    text-decoration-color: var(--ink-faint);
+    text-underline-offset: 3px;
+}
 
 /* =============================================================
    HERO — preserved, softened at the bottom so it fades to paper.

@@ -17,6 +17,15 @@ layout = "page"
 
 ---
 
+## Values
+
+- Simplicity.
+- Truth.
+- Integrity.
+- Overcommunication.
+
+---
+
 ## Operating Principles
 
 ### Meta
