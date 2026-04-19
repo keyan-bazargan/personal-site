@@ -1,46 +1,39 @@
-# Design Refresh — Analog / Tactile Direction
+# Design Refresh — Visual References
 
-Working notes for the design refresh on branch `claude/design-refresh-animations-cmlrJ`.
+## Live preview
 
-## Context
+A working, interactive demo of the recommended direction (#1 + #3 + #4) lives in this branch at `static/design-preview.html`.
 
-The site currently runs Hugo + PaperMod with a single-page serif aesthetic (Cormorant Garamond italic), a cinematic hero image, and zero JavaScript. The goal of the refresh is to push further into an **analog / field-notebook** feel without losing the existing minimalism.
+To view:
+```
+hugo server
+# then open http://localhost:1313/design-preview.html
+```
 
-2026 design research points strongly toward "anti-AI crafting": tactile textures, hand-made imperfection, micro-delight animations, and a deliberate rejection of flat digital polish.
+Or open `static/design-preview.html` directly in a browser — it's self-contained.
 
-## Five directions considered
+The preview has toggle buttons at the bottom so you can turn each effect on and off to compare.
 
-### 1. Paper & film-grain substrate
-A subtle animated grain overlay (SVG turbulence or a looping noise PNG at ~4% opacity) across the whole page, plus a faint paper/vellum texture behind body copy. Makes the serif type feel letterpressed instead of screen-rendered. Very low JS cost.
+## Reference demos (live)
 
-### 2. Typewriter + ink-bleed intro
-The home tagline types itself out on load, with a blinking caret and a faint "ink bleed" behind each glyph. One-shot only — doesn't repeat on scroll. Respects `prefers-reduced-motion`.
+### #1 — Grain & paper
+- **Grainy Gradients** — CSS-Tricks: https://css-tricks.com/grainy-gradients/
+- **Animated Grainy Texture** — CSS-Tricks: https://css-tricks.com/snippets/css/animated-grainy-texture/
+- **nnnoise** generator (see it move): https://www.fffuel.co/nnnoise/
+- **SVG feTurbulence** walkthrough — Codrops: https://tympanus.net/codrops/2019/02/19/svg-filter-effects-creating-texture-with-feturbulence/
 
-### 3. Analog cursor
-Replace the pointer with a small crosshair/reticle (darkroom loupe or astronomical finder — fitting given *Moon Shot*). Magnetic pull toward links; spotlight-reveal mode over the hero image. Biggest "wow" for the least code.
+### #3 — Analog cursor
+- **Fullscreen Crosshair Cursor** — CodePen: https://codepen.io/mikethedj4/pen/fnizu
+- **Magnetic button cursor** — CodePen: https://codepen.io/phucbui/pen/RmbGOQ
+- **Awwwards — Hovers, Cursors & Cute Interactions** collection: https://www.awwwards.com/awwwards/collections/hovers-cursors-and-cute-interactions/
+- **90's Cursor Effects** (playful reference): https://tholman.com/cursor-effects/
 
-### 4. Hand-drawn marginalia & dividers
-Swap `---` separators for SVG sketched lines / asterisms. Underline links with a hand-drawn wobble instead of a straight rule. Book list gets little hand-drawn check-bullets.
+### #4 — Hand-drawn marginalia
+- **Rough Notation** library demo: https://roughnotation.com/
+- **Hand-Drawn Underline** — CodePen: https://codepen.io/simonwuyts/pen/OJVPyxX
+- **Random hand underline with SVG** — CodePen: https://codepen.io/davidwebca/pen/xGPzyQ
+- **SVG Underline doodles** — gallery: https://www.svgbackgrounds.com/elements/underline-doodles/
 
-### 5. Tactile page transitions
-Crossfade-to-black with a subtle film-leader "countdown" flash between routes, or a page-turn curl for writing posts. More ambitious — worth it only if we want writing to feel like a zine.
-
-## Recommendation
-
-Start with **#1 + #3 + #4**. They're additive, stack cleanly on top of PaperMod, and collectively shift the feel from "clean blog" to "analog field notebook" without a framework swap.
-
-- **#2** is a nice add-on for the home page only.
-- **#5** stays on hold unless we want the site to feel noticeably heavier.
-
-## Decision
-
-Going with the recommendation: **#1 (grain + paper), #3 (analog cursor), #4 (hand-drawn marginalia)**.
-
-## Sources
-
-- [Texture, warmth and tactile rebellion — Creative Bloq](https://www.creativebloq.com/design/graphic-design/texture-warmth-and-tactile-rebellion-the-big-graphic-design-trends-for-2026)
-- [Digital Harmony: Embracing Analog in Modern Web Design — Squarespace](https://pros.squarespace.com/blog/analog-design-trend)
-- [Custom Cursor Effects — Codrops](https://tympanus.net/codrops/2019/01/31/custom-cursor-effects/)
-- [Hovers, Cursors and Cute Interactions — Awwwards](https://www.awwwards.com/awwwards/collections/hovers-cursors-and-cute-interactions/)
-- [Retro collection — Awwwards](https://www.awwwards.com/awwwards/collections/retro/)
-- [11 Motion Design Trends for 2026 — Envato](https://elements.envato.com/learn/motion-design-trends)
+### Whole-site inspiration (analog voice)
+- **Vidéographe** (Awwwards, vintage film-processing feel): https://www.awwwards.com/sites/videographe
+- **Awwwards Retro collection**: https://www.awwwards.com/awwwards/collections/retro/
