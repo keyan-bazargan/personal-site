@@ -91,25 +91,6 @@ html[data-theme="dark"] .grain {
     opacity: 0.07;
 }
 
-/* Paper mottling beneath the grain — faint warm tone variation. */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-image:
-        radial-gradient(circle at 18% 22%, rgba(138, 111, 64, 0.10) 0, transparent 45%),
-        radial-gradient(circle at 82% 68%, rgba(90, 60, 30, 0.07) 0, transparent 40%),
-        radial-gradient(circle at 50% 95%, rgba(138, 111, 64, 0.06) 0, transparent 40%);
-}
-
-html[data-theme="dark"] body::before {
-    background-image:
-        radial-gradient(circle at 18% 22%, rgba(217, 138, 90, 0.06) 0, transparent 45%),
-        radial-gradient(circle at 82% 68%, rgba(120, 90, 60, 0.05) 0, transparent 40%);
-}
-
 /* =============================================================
    CONTENT — clean editorial typography.
    ============================================================= */
@@ -216,7 +197,3 @@ hr::before {
     font-size: 1.2rem;
     font-weight: 500;
 }
-
-/* Stack order: paper mottling (body::before) behind everything,
-   content above, grain above content, cursor on top. */
-#main, .main, header.header, footer.footer { position: relative; z-index: 1; }
