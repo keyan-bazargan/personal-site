@@ -1,28 +1,288 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&display=swap');
 
-/* Hero image - full width */
+/* =============================================================
+   Analog palette — paper, ink, a touch of rust.
+   ============================================================= */
+:root {
+    --paper: #ede4d2;
+    --paper-deep: #e2d6bc;
+    --ink: #1a1713;
+    --ink-soft: rgba(26, 23, 19, 0.7);
+    --ink-faint: rgba(26, 23, 19, 0.15);
+    --accent: #8a2a1e;
+}
+
+html[data-theme="dark"] {
+    --paper: #141210;
+    --paper-deep: #1c1916;
+    --ink: #e8dfc9;
+    --ink-soft: rgba(232, 223, 201, 0.7);
+    --ink-faint: rgba(232, 223, 201, 0.18);
+    --accent: #d98a5a;
+}
+
+/* Override PaperMod theme tokens so the whole chrome sits on paper. */
+:root,
+html[data-theme="dark"] {
+    --theme: var(--paper);
+    --entry: var(--paper);
+    --primary: var(--ink);
+    --secondary: var(--ink-soft);
+    --tertiary: var(--ink-faint);
+    --content: var(--ink);
+    --border: var(--ink-faint);
+    --hljs-bg: var(--paper-deep);
+    --code-bg: var(--paper-deep);
+}
+
+html,
+body {
+    background: var(--paper);
+    color: var(--ink);
+    cursor: none;
+}
+
+body,
+.post-content,
+.page-header,
+.first-entry,
+.entry-header,
+.entry-content,
+.home-info p,
+.footer {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.65;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-title,
+.entry-header h2,
+.first-entry .entry-header h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+}
+
+.post-content h2 {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.9rem;
+    margin-top: 2.6rem;
+}
+
+/* =============================================================
+   FILM GRAIN OVERLAY — SVG noise, fixed, lightly animated.
+   ============================================================= */
+.grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.16;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    animation: grainshift 1.2s steps(6) infinite;
+}
+
+html[data-theme="dark"] .grain {
+    mix-blend-mode: screen;
+    opacity: 0.1;
+}
+
+@keyframes grainshift {
+    0%   { transform: translate(0, 0); }
+    20%  { transform: translate(-3%, 2%); }
+    40%  { transform: translate(2%, -4%); }
+    60%  { transform: translate(-2%, 3%); }
+    80%  { transform: translate(3%, 1%); }
+    100% { transform: translate(0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .grain { animation: none; }
+}
+
+/* Paper mottling beneath the grain — faint warm tone variation. */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle at 18% 22%, rgba(138, 111, 64, 0.10) 0, transparent 45%),
+        radial-gradient(circle at 82% 68%, rgba(90, 60, 30, 0.07) 0, transparent 40%),
+        radial-gradient(circle at 50% 95%, rgba(138, 111, 64, 0.06) 0, transparent 40%);
+}
+
+html[data-theme="dark"] body::before {
+    background-image:
+        radial-gradient(circle at 18% 22%, rgba(217, 138, 90, 0.06) 0, transparent 45%),
+        radial-gradient(circle at 82% 68%, rgba(120, 90, 60, 0.05) 0, transparent 40%);
+}
+
+/* =============================================================
+   ANALOG CURSOR — crosshair reticle, swells on interactive els.
+   ============================================================= */
+.cursor {
+    position: fixed;
+    top: 0; left: 0;
+    width: 36px; height: 36px;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: width 180ms ease, height 180ms ease, opacity 220ms ease;
+    color: var(--ink);
+    opacity: 0;
+    will-change: transform;
+}
+
+.cursor.is-ready { opacity: 1; }
+
+.cursor svg { width: 100%; height: 100%; display: block; }
+
+.cursor circle,
+.cursor line { stroke: currentColor; fill: none; stroke-width: 1; }
+
+.cursor .dot { fill: currentColor; stroke: none; }
+
+.cursor.is-hover { width: 64px; height: 64px; }
+.cursor.is-hover circle { stroke: var(--accent); stroke-width: 1.5; }
+.cursor.is-hover .dot { fill: var(--accent); }
+
+@media (hover: none), (pointer: coarse) {
+    html, body { cursor: auto; }
+    .cursor { display: none; }
+}
+
+/* =============================================================
+   HAND-DRAWN MARGINALIA — underlines, bullets, dividers.
+   ============================================================= */
+
+/* Wobbly underline on content links (masked so the color follows theme). */
+.post-content a,
+.home-info a,
+.first-entry a,
+.page-header a {
+    color: var(--accent);
+    text-decoration: none;
+    position: relative;
+    display: inline;
+    padding-bottom: 3px;
+    background-image: none;
+}
+
+.post-content a::after,
+.home-info a::after,
+.first-entry a::after,
+.page-header a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 7px;
+    background-color: var(--accent);
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 8' preserveAspectRatio='none'><path d='M2 5 C 20 1, 40 7, 60 4 S 100 2, 118 5' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 8' preserveAspectRatio='none'><path d='M2 5 C 20 1, 40 7, 60 4 S 100 2, 118 5' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round'/></svg>");
+    -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    transition: height 180ms ease, transform 180ms ease;
+}
+
+.post-content a:hover::after,
+.home-info a:hover::after,
+.first-entry a:hover::after,
+.page-header a:hover::after {
+    height: 11px;
+    transform: translateY(1px);
+}
+
+/* Sketched bullets for content lists. */
+.post-content ul {
+    list-style: none;
+    padding-left: 1.8rem;
+}
+
+.post-content ul li {
+    position: relative;
+}
+
+.post-content ul li::before {
+    content: "";
+    position: absolute;
+    left: -1.6rem;
+    top: 0.7em;
+    width: 1.1rem;
+    height: 0.55rem;
+    background-color: var(--ink);
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 10'><path d='M1 5 Q 4 1, 8 5 T 22 4' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 10'><path d='M1 5 Q 4 1, 8 5 T 22 4' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round'/></svg>");
+    -webkit-mask-size: contain;
+            mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+}
+
+/* Sketched dividers: Markdown `---` becomes hand-drawn line with a centered dot. */
+.post-content hr,
+hr {
+    border: none;
+    height: 16px;
+    margin: 2.6rem auto;
+    width: 200px;
+    background-color: var(--ink);
+    opacity: 0.65;
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 16'><path d='M4 8 Q 34 2, 68 9 T 134 7 T 196 8' fill='none' stroke='black' stroke-width='1.2' stroke-linecap='round'/><circle cx='100' cy='8' r='1.8' fill='black'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 16'><path d='M4 8 Q 34 2, 68 9 T 134 7 T 196 8' fill='none' stroke='black' stroke-width='1.2' stroke-linecap='round'/><circle cx='100' cy='8' r='1.8' fill='black'/></svg>");
+    -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+}
+
+/* Nav links stay quiet — no wobble. */
+.menu a,
+.logo a,
+.footer a {
+    text-decoration: none;
+    color: var(--ink);
+}
+.menu a:hover,
+.logo a:hover { color: var(--accent); }
+
+/* =============================================================
+   HERO — preserved, softened at the bottom so it fades to paper.
+   ============================================================= */
 .home-info {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 60%), url('/hero.jpeg');
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.08) 55%, var(--paper) 100%),
+        url('/hero.jpeg');
     background-size: cover;
     background-position: center 40%;
     min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 4rem 2rem 2rem 2rem;
+    padding: 4rem 2rem 3rem 2rem;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+    position: relative;
 }
 
-/* Make home text readable over the image */
 .home-info h1 {
     color: #fff !important;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5) !important;
     font-family: 'Cormorant Garamond', serif !important;
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
     font-weight: 300 !important;
     font-style: italic !important;
-    max-width: 500px;
+    max-width: 520px;
+    letter-spacing: 0.01em;
 }
 
 .home-info p {
@@ -31,3 +291,7 @@
     font-size: 1.2rem;
     font-weight: 500;
 }
+
+/* Stack order: paper mottling (body::before) behind everything,
+   content above, grain above content, cursor on top. */
+#main, .main, header.header, footer.footer { position: relative; z-index: 1; }

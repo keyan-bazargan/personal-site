@@ -1,0 +1,48 @@
+{{/* Analog design refresh — grain overlay, crosshair cursor, link swell. */}}
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="cursor" aria-hidden="true">
+  <svg viewBox="0 0 36 36">
+    <circle cx="18" cy="18" r="11"/>
+    <circle class="dot" cx="18" cy="18" r="1.5"/>
+    <line x1="18" y1="0"  x2="18" y2="6"/>
+    <line x1="18" y1="30" x2="18" y2="36"/>
+    <line x1="0"  y1="18" x2="6"  y2="18"/>
+    <line x1="30" y1="18" x2="36" y2="18"/>
+  </svg>
+</div>
+
+<script>
+(function () {
+  if (matchMedia('(hover: none), (pointer: coarse)').matches) return;
+
+  const cursor = document.querySelector('.cursor');
+  if (!cursor) return;
+
+  let tx = window.innerWidth / 2, ty = window.innerHeight / 2;
+  let x = tx, y = ty;
+  let ready = false;
+
+  window.addEventListener('pointermove', (e) => {
+    tx = e.clientX; ty = e.clientY;
+    if (!ready) { cursor.classList.add('is-ready'); ready = true; }
+  }, { passive: true });
+
+  function tick() {
+    x += (tx - x) * 0.35;
+    y += (ty - y) * 0.35;
+    cursor.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+    requestAnimationFrame(tick);
+  }
+  tick();
+
+  const hoverables = 'a, button, [role="button"], summary, input, textarea, select, label';
+  document.addEventListener('pointerover', (e) => {
+    if (e.target.closest && e.target.closest(hoverables)) cursor.classList.add('is-hover');
+  });
+  document.addEventListener('pointerout', (e) => {
+    if (e.target.closest && e.target.closest(hoverables)) cursor.classList.remove('is-hover');
+  });
+})();
+</script>
