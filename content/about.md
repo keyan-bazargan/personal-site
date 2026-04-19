@@ -44,7 +44,7 @@ Books that have shaped how I think.
 - *What Do You Care What Other People Think?* — Richard Feynman
 - *Ender's Game* — Orson Scott Card
 - *Think & Grow Rich* — Napoleon Hill
-- *Moon Shot* — Alan Shepard
+- *Moon Shot* — Alan Shepard & Deke Slayton
 
 ## Movies
 
