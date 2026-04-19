@@ -17,16 +17,13 @@ layout = "page"
 
 ---
 
-## Values
+## Operating Principles
 
+### Values
 - Simplicity.
 - Truth.
 - Integrity.
 - Overcommunication.
-
----
-
-## Operating Principles
 
 ### Meta
 - Customer obsession.
