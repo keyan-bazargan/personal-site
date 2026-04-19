@@ -2,7 +2,10 @@ name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - claude/design-refresh-animations-cmlrJ
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -13,19 +16,48 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  SITE_BASE_URL: https://keyanbazargan.com
+  PREVIEW_BRANCH: claude/design-refresh-animations-cmlrJ
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout main
+        uses: actions/checkout@v4
         with:
+          ref: main
           submodules: recursive
+          fetch-depth: 0
+          path: main-src
+
+      - name: Checkout preview branch
+        id: preview-checkout
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          ref: ${{ env.PREVIEW_BRANCH }}
+          submodules: recursive
+          fetch-depth: 0
+          path: preview-src
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
-      - name: Build
-        run: hugo --minify
+
+      - name: Build main site
+        run: hugo --minify --source main-src --destination ../public
+
+      - name: Build preview site
+        if: steps.preview-checkout.outcome == 'success'
+        run: |
+          hugo --minify \
+            --source preview-src \
+            --destination ../public/preview \
+            --baseURL "${SITE_BASE_URL}/preview/"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
