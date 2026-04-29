@@ -54,6 +54,13 @@ Movies that I've thoroughly enjoyed.
 - *Life is Beautiful* — 1997
 - *Project Hail Mary* — 2025
 
+## Documentaries
+
+Documentaries and channels worth watching.
+
+- *The Endless Summer* — 1966. Bruce Brown's surf film following two surfers chasing summer around the world. Birthed surf-and-travel culture.
+- *Free Documentary* — YouTube channel out of Berlin publishing full-length docs across nature, history, and science.
+
 ---
 
 ## Gratitude
