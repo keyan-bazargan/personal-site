@@ -1,5 +1,5 @@
 +++
-title = "About"
+title = "Keyan Bazargan"
 layout = "page"
 +++
 
@@ -56,4 +56,3 @@ My favorite documentaries.
 
 - *The Endless Summer* — 1966. Bruce Brown's surf film following two surfers chasing summer around the world. Birthed surf-and-travel culture.
 - *Free Documentary* — YouTube channel out of Berlin publishing full-length docs across nature, history, and science.
-
