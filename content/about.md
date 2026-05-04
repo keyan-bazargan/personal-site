@@ -19,36 +19,32 @@ layout = "page"
 
 ## Operating Principles
 
+### Meta
+- First principles.
+- Game theory.
+- Common sense.
+
 ### Values
 - Simplicity.
 - Truth.
 - Integrity.
-- Overcommunication.
-
-### Meta
-- Customer obsession.
-- Heartfelt passion for invention.
-- Commitment to operational excellence.
-- Willingness to think long term.
-
-### Tactical
-- Every task or project must have a clear owner and a clear deadline.
-- If you don't finish your task in one sitting, plan exactly when you'll work on it next.
+- Clarity.
 
 ---
 
 ## Books
 
-Books that have shaped how I think.
+My favorite books.
 
 - *What Do You Care What Other People Think?* — Richard Feynman
 - *Ender's Game* — Orson Scott Card
 - *Think & Grow Rich* — Napoleon Hill
 - *Moon Shot* — Alan Shepard & Deke Slayton
+- *My Life and Work* — Henry Ford
 
 ## Movies
 
-Movies that I've thoroughly enjoyed.
+My favorite movies.
 
 - *From Russia With Love* — 1963
 - *Life is Beautiful* — 1997
@@ -56,43 +52,8 @@ Movies that I've thoroughly enjoyed.
 
 ## Documentaries
 
-Documentaries and channels worth watching.
+My favorite documentaries.
 
 - *The Endless Summer* — 1966. Bruce Brown's surf film following two surfers chasing summer around the world. Birthed surf-and-travel culture.
 - *Free Documentary* — YouTube channel out of Berlin publishing full-length docs across nature, history, and science.
 
----
-
-## Gratitude
-
-Small things worth remembering.
-
-**3/7/26**
-- This was one of those 'peak' days. I played competitive and organized basketball in the morning, then spent the entire afteroon at a beach lounge, reading, writing, playing chess, eating amazing food, and watching the ocean for hours with one of my best friends. Then I went home and worked on a very energizing work project. Not every day is like this. I'm grateful to be able to experience even just one day like this.
-
-**3/5/26**
-- To the lads for dinner, special night and conversations. Flow state achieved.
-
-**3/1/26**
-- For Oliver for a great conversation.
-
-**2/28/26**
-- I made it another month. 
-- Daniel and I played a great game of chess.
-- The contrast between the hot beach and my cold shower after.
-
-**2/27/26**
-- Tangerines for tasting extra good today.
-- Ayres for genuinely wishing me a big growth year.
-- My local dry cleaner for doing a great job with my suit pants.
-
-**2/26/26**
-- 80 yr old man for the pleasant passing conversation.
-- For the ability to see neon orange.
-- For my enjoyable nap in the sun.
-
-
-**2/25/26**
-- Aaron for genuinely wishing me good luck with my business.
-- The lady at the Whole Foods checkout for her friendliness.
-- Andrew for his enthusiasm on our potential business deal.
