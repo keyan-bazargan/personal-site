@@ -7,11 +7,9 @@ layout = "page"
 
 ### Iron Margin
 
-**Problem:** Small brands and 3PLs are often severely overpaying on shipping, hurting profitability.
+Online retail sellers and fulfillment centers have a lot on their plate. Rarely do they have the time and resources to become transportation experts. We specialize in this, so that these businesses can hire us at a fraction of the time and cost it would take to build the skillset internally.
 
-**Solution:** A consultancy that runs formal RFP processes for brands and 3PLs to negotiate rates down to market value or less.
-
-**Learn more:** [ironmargin.com](https://www.ironmargin.com)
+[ironmargin.com](https://www.ironmargin.com)
 
 ---
 
