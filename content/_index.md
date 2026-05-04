@@ -5,8 +5,6 @@ layout = "page"
 
 ## Projects
 
----
-
 ### Iron Margin
 
 **Problem:** Small brands and 3PLs are often severely overpaying on shipping, hurting profitability.
@@ -19,16 +17,9 @@ layout = "page"
 
 ## Operating Principles
 
-### Meta
-- First principles.
-- Game theory.
-- Common sense.
+**Meta** — First principles · Game theory · Common sense
 
-### Values
-- Simplicity.
-- Truth.
-- Integrity.
-- Clarity.
+**Values** — Simplicity · Truth · Integrity · Clarity
 
 ---
 
@@ -42,6 +33,8 @@ My favorite books.
 - *Moon Shot* — Alan Shepard & Deke Slayton
 - *My Life and Work* — Henry Ford
 
+---
+
 ## Movies
 
 My favorite movies.
@@ -49,6 +42,8 @@ My favorite movies.
 - *From Russia With Love* — 1963
 - *Life is Beautiful* — 1997
 - *Project Hail Mary* — 2025
+
+---
 
 ## Documentaries
 

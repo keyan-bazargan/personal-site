@@ -1,7 +1,7 @@
 +++
 title = 'Time is Speeding Up'
 date = 2026-02-26
-draft = false
+draft = true
 +++
 
 I can't prove it, but your fragmented attention is stealing decades of your life.
