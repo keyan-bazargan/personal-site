@@ -4,19 +4,8 @@ title = "Keyan Bazargan"
 theme = "PaperMod"
 
 [params]
-  homeInfoParams = {Title = "A home for my thoughts and ideas.", Content = ""}
   ShowReadingTime = true
   ShowPostNavLinks = true
-
-[menu]
-  [[menu.main]]
-    name = "Writing"
-    url = "/posts/"
-    weight = 1
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 2
 
 [author]
   name = "Keyan Bazargan"
