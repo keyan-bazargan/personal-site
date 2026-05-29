@@ -30,6 +30,7 @@ My favorite books.
 - *Think & Grow Rich* — Napoleon Hill
 - *Moon Shot* — Alan Shepard & Deke Slayton
 - *My Life and Work* — Henry Ford
+- *Genghis Khan and the Making of the Modern World* — Jack Weatherford
 
 ---
 
