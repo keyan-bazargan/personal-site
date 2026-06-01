@@ -3,7 +3,6 @@ date = '2026-06-01T09:00:00-07:00'
 draft = false
 title = 'The Matchmaking Layer'
 summary = 'AI is not a break from history. It is the next layer in the oldest job in the economy: matching supply to demand with less friction.'
-tags = ['ai', 'economics', 'markets']
 +++
 
 For almost all of human history, nobody did everything themselves. Even in a tribe of twenty, someone hunts, someone sews, someone builds. Specialization is older than money, older than cities, older than writing. We have always split the work and traded the results, and that trade is the part of the story that actually matters.
@@ -20,6 +19,6 @@ AI is the next layer on top of all of it. In plain language, through a chat box,
 
 The next step follows directly from the pattern. Before long you will close your laptop and your AI will already know, in general terms, what you want. It will go out, talk to other AIs, find the matches, and bring them back, so most of the proactive searching goes away.
 
-I feel the gap every day. I run a logistics consultancy, and I still spend real time posting, cold emailing, and grinding on sales. There<seg_27>There are probably thousands of companies out there with a need that fits what I do almost perfectly, and even now, with search and social media and every tool built to help people find each other, finding them is slow. That is the gap AI closes, especially once it goes agentic and starts doing the work without me looking over its shoulder.
+I feel the gap every day. I run a logistics consultancy, and I still spend real time posting, cold emailing, and grinding on sales. There are probably thousands of companies out there with a need that fits what I do almost perfectly, and even now, with search and social media and every tool built to help people find each other, finding them is slow. That is the gap AI closes, especially once it goes agentic and starts doing the work without me looking over his shoulder.
 
 There are plenty of uses for AI that have nothing to do with this. I am writing about one of them: supply meeting demand with less and less friction. It is the oldest job in the economy, and the one AI is set up to do better than anything before it.
