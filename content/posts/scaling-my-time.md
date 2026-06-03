@@ -1,7 +1,7 @@
 +++
 date = '2026-06-02T18:00:00-07:00'
 draft = false
-title = 'Scaling a Solo Founder Is Mostly Subtraction'
+title = "How I'm Scaling My Time"
 summary = 'The instinct when you think about scaling is to imagine doing more. Looking at where my time actually goes, it turned out to be the opposite: hand off four categories so I can do more of one.'
 +++
 
