@@ -162,6 +162,23 @@ hr::before {
 }
 
 /* =============================================================
+   LIST ENTRIES — drop the bordered "card" box so every post in the
+   list reads plain, the same way the first (hero) entry does.
+   PaperMod boxes every entry after the first; this un-boxes them.
+   ============================================================= */
+.post-entry {
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: calc(var(--gap) * 2);
+}
+
+.post-entry:active {
+    transform: none;
+}
+
+/* =============================================================
    HERO — preserved, softened at the bottom so it fades to paper.
    ============================================================= */
 .home-info {
