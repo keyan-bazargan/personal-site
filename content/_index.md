@@ -21,6 +21,14 @@ Online retail sellers and fulfillment centers have a lot on their plate. Rarely 
 
 ---
 
+## Companies & Entrepreneurs
+
+People and companies I admire.
+
+- **Strauss Zelnick** — Take-Two Interactive · ZelnickMedia
+
+---
+
 ## Books
 
 My favorite books.
