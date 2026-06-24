@@ -31,6 +31,15 @@ My favorite books.
 - *Moon Shot* — Alan Shepard & Deke Slayton
 - *My Life and Work* — Henry Ford
 - *Genghis Khan and the Making of the Modern World* — Jack Weatherford
+- *Essentialism* — Greg McKeown
+
+---
+
+## Companies
+
+My favorite companies.
+
+- *1Password*
 
 ---
 
