@@ -7,7 +7,7 @@ layout = "page"
 
 ### Iron Margin
 
-Your outsourced supply chain team — fulfillment and delivery advisory for Shopify brands. Better carrier rates, systems that actually work, and proactive delivery, all on your side of the table.
+Iron Margin is my outsourced supply chain team for mission-driven Shopify brands. The goal is to build resilient, cost-effective fulfillment and delivery supply chains for brand owners who'd rather focus on their product. In practice that means getting them better carrier rates, setting up order management systems that actually work, and staying ahead of delivery problems before customers complain. We don't let invoice errors or SLAs slip through, we only work with vetted partners, and we think in terms of lifetime value so a good delivery experience keeps customers buying again.
 
 [ironmargin.com](https://www.ironmargin.com)
 
