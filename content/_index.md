@@ -7,7 +7,7 @@ layout = "page"
 
 ### Iron Margin
 
-Online retail sellers and fulfillment centers have a lot on their plate. Rarely do they have the time and resources to become transportation experts. We specialize in this, so that these businesses can hire us at a fraction of the time and cost it would take to build the skillset internally.
+Your outsourced supply chain team — fulfillment and delivery advisory for Shopify brands. Better carrier rates, systems that actually work, and proactive delivery, all on your side of the table.
 
 [ironmargin.com](https://www.ironmargin.com)
 
