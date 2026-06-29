@@ -60,3 +60,11 @@ My favorite documentaries.
 
 - *The Endless Summer* — 1966
 - *Free Documentary (Youtube)* — 2013
+
+---
+
+## Podcasts
+
+My favorite podcasts.
+
+- *The Jack Mallers Show* — Ep. 1: Jack Dorsey
