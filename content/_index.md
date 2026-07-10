@@ -68,3 +68,11 @@ My favorite documentaries.
 My favorite podcasts.
 
 - *The Jack Mallers Show* — Ep. 1: Jack Dorsey
+
+---
+
+## Videos
+
+My favorite videos.
+
+- [*What does a cheetah sound like?*](https://youtube.com/shorts/IgF_20DBVa4) — Nick Kleer
