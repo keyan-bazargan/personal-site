@@ -1,6 +1,6 @@
 +++
 date = '2026-06-01T09:00:00-07:00'
-draft = false
+draft = true
 title = 'The Matchmaking Layer'
 summary = 'AI is not a break from history. It is the next layer in the oldest job in the economy: matching supply to demand with less friction.'
 +++
