@@ -1,17 +1,9 @@
 baseURL = "https://keyanbazargan.com/"
-languageCode = "en-us"
+locale = "en-US"
 title = "Keyan Bazargan"
-theme = "PaperMod"
-
-[params]
-  ShowReadingTime = true
-  ShowPostNavLinks = true
+disableKinds = ["taxonomy", "term", "RSS", "section"]
 
 [author]
   name = "Keyan Bazargan"
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
-  page = ["HTML"]
-  section = ["HTML"]
-  taxonomy = ["HTML"]
-  term = ["HTML"]
+  home = ["HTML"]
